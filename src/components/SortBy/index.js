@@ -5,8 +5,6 @@ export default function SortBy(props) {
   const [activeSort, setActivSort] = useState("year");
   
   function handleChose(event) {
-   
-    console.log(event.target.value);
     setActivSort(event.target.value);
   }
   
