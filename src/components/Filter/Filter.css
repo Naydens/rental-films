@@ -1,0 +1,39 @@
+.filters {
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.filters__all-search {
+  margin: 5px;
+  text-align: left;
+}
+
+.filters__line {
+  border: 0;
+  border-top: 3px solid black;
+  margin: 15px 3px 0;
+}
+
+.filters label {
+  display: block;
+}
+
+.filters__all-search p {
+  text-align: center;
+}
+
+input[type="checkbox"] {
+  width: 10px;
+  height: 10px;
+  display: none;
+}
+input[type="checkbox"] + span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+input[type="checkbox"]:checked + span {
+  background-color: black;
+}

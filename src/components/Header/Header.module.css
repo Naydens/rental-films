@@ -1,0 +1,29 @@
+.header {
+  height: 50px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+.header__searchForm {
+  width: 30%;
+  height: 60%;
+  display: flex;
+}
+.header__sortBySelect {
+  border: none;
+  outline: none;
+  width: 100px;
+  height: 25px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+  }
+  button.button {
+    color: red;
+  }
+  .button {
+color: green;
+  }

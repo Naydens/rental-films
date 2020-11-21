@@ -1,13 +1,60 @@
+@font-face {
+  font-family: "Bangers-Regular";
+  src: url(./fonts/Bangers/Bangers-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SawarabiMincho-Regular";
+  src: url(./fonts/Sawarabi_Mincho/SawarabiMincho-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Bangers-Regular;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.container__main {
+  width: 77%;
+}
+.container__main_full-width {
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container__right {
+  width: 20%;
+  height: 620px;
+}
+
+.container__left {
+  width: 20%;
+  height: 620px;
+/* displey flex  */
+  order: -1;             
+}
+
+.content__film-name {
+  margin: 0;
+}
+
+.content__img {
+  margin: 10px;
+  margin-right: 20px;
+  float: left;
+}
+.content__full-info {
+  margin: 10px;
+}
+.content__full-description {
+  clear: both;
+  margin: 0;
+}
+
+.font-span {
+  font-family: SawarabiMincho-Regular;
 }

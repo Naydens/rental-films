@@ -1,0 +1,19 @@
+
+  .search-form__input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px; 
+    border: none;
+    background-image: url(./search1.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20px;
+    background-position-x: 3px;
+    font-family: Bangers-Regular;
+    padding-left: 40px;
+  }
+  .search-form__input::placeholder {
+    text-align: left;
+  }
+  
