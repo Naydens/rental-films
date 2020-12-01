@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ShowMoreBtn from "./ShowMoreBt";
 
 export default class Playground extends Component {
   state = {
@@ -27,6 +28,11 @@ export default class Playground extends Component {
       );
     });
 
-    return <div>{posts.length ? postsList : "Подождите, идет загрузка"}</div>;
+    return (
+      <div>
+        {posts.length ? postsList : "Подождите, идет загрузка"}
+        <ShowMoreBtn />
+      </div>
+    );
   }
 }

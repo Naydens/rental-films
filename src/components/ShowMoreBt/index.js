@@ -1,6 +1,6 @@
 import "./ShowMoreBt.css";
 
-export default function() {
+export default function ShowMoreBt() {
     return (
         <button className="container__show-more">
           <span id="show-more">SHOW MORE</span>
