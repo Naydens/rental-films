@@ -1,17 +1,19 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Film.css";
 
 export default function Film(props) {
   return (
-    <div className="content">
-      <div className="content__film">
-        <img
-          src="https://picsum.photos/100/100"
-          alt=""
-          className="content__img-film"
-        />
-        <a href="#" className="film__film-more">
+    
+    <div className="film">
+      <div className="film__content">
+        <img src="https://picsum.photos/100/100" alt="" className="film__img" />
+        {/* <a href="#" className="film__film-more">
           &rsaquo;
-        </a>
+        </a> */}
+        <Link to="/film-description" className="film__film-more">
+          &rsaquo;
+        </Link>
 
         <div className="film__head-line">
           <h2>Film name 1</h2>

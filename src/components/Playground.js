@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ShowMoreBtn from "./ShowMoreBt";
+import ShowMoreBt from "./ShowMoreBt";
 
 export default class Playground extends Component {
   state = {
@@ -11,10 +11,22 @@ export default class Playground extends Component {
       .then((response) => response.json())
       .then((posts) =>
         this.setState({
-          posts: posts.slice(0, 5),
+          posts: posts.slice(0, 10),
         })
       );
   }
+
+  handleButtonClick = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((posts) => {
+        this.setState((prevState) => {
+          return {
+            posts: [...prevState.posts, ...posts.slice(0, 10)],
+          };
+        });
+      });
+  };
 
   render() {
     const { posts } = this.state;
@@ -31,7 +43,7 @@ export default class Playground extends Component {
     return (
       <div>
         {posts.length ? postsList : "Подождите, идет загрузка"}
-        <ShowMoreBtn />
+        <ShowMoreBt onClick={this.handleButtonClick} />
       </div>
     );
   }
