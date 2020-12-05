@@ -1,9 +1,16 @@
-.film {
+/* .film {
   width: 77%;
   max-width: 1000px;
   margin: auto;
  
+} */
+
+.film_full {
+  width: 77%;
+  max-width: 1000px;
+  margin: auto;
 }
+
 .film__content {
   margin: 1% 0;
   box-sizing: content-box;

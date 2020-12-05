@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Film from "../components/Film";
 
-export default function FilmPage(){
+export default function FilmPage(props){
+  console.log(props.match.params.id);
     return (
         <div>
-          <Film/>
+          <Film full />
         </div>
       );
 }

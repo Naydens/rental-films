@@ -8,22 +8,26 @@ export default class ShowMoreBt extends Component {
 
   handleButtonClick = () => {
     this.setState({ isDisabled: true });
-    setTimeout(() => {
+    this.props.onClick().then(() => {
       this.setState({ isDisabled: false });
-    }, 5000);
+    });
   };
 
   render() {
+    const { isDisabled } = this.state;
+    
     return (
       <button
         onClick={this.handleButtonClick}
         className="show-more"
-        disabled={this.state.isDisabled}
+        disabled={isDisabled}
       >
-        <span className={this.state.isDisabled ? "hidden" : ""}>SHOW MORE</span>
+        {!isDisabled && <span>SHOW MORE</span>}
+        {isDisabled && <div className="show-more__load" />}
+        {/* <span className={this.state.isDisabled ? "hidden" : ""}>SHOW MORE</span>
         <div
           className={!this.state.isDisabled ? "hidden" : "show-more__load"}
-        ></div>
+        ></div> */}
       </button>
     );
   }

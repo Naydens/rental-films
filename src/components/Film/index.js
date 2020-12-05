@@ -5,15 +5,15 @@ import "./Film.css";
 export default function Film(props) {
   return (
     
-    <div className="film">
+    <div className={`film ${props.full ? 'film_full' : ''}`}>
       <div className="film__content">
         <img src="https://picsum.photos/100/100" alt="" className="film__img" />
         {/* <a href="#" className="film__film-more">
           &rsaquo;
         </a> */}
-        <Link to="/film-description" className="film__film-more">
+        {!props.full && <Link to="/film-description" className="film__film-more">
           &rsaquo;
-        </Link>
+        </Link>}
 
         <div className="film__head-line">
           <h2>Film name 1</h2>
