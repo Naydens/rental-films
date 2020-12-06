@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import FilmPage from "./pages/FilmPage";
-import Playground from "./components/Playground";
+import PlaygroundPage from "./pages/PlaygroundPage";
+import Layout from "./pages/Layout";
 
 export default function App() {
   return (
@@ -10,9 +11,11 @@ export default function App() {
         <HomePage />
       </Route>
 
-<Route path="/film-description/:id" component={FilmPage} />
-    
-      {/* <Playground /> */}
+      <Route path="/film-description/:id" component={FilmPage} />
+      <Route path="/playground">
+        <PlaygroundPage />
+      </Route>
+
     </BrowserRouter>
   );
 }

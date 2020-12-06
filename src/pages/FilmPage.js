@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Film from "../components/Film";
+import Layout from './Layout';
 
 export default function FilmPage(props){
   console.log(props.match.params.id);
     return (
-        <div>
+        <Layout>
           <Film full />
-        </div>
+        </Layout>
       );
 }
 
