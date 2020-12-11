@@ -10,7 +10,7 @@ export default function App() {
         <HomePage />
       </Route>
 
-<Route path="/film-description/:id" component={FilmPage} />
+<Route path="/film-description/:id" exact component={FilmPage} />
     
       {/* <Playground /> */}
     </BrowserRouter>

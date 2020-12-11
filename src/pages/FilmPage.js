@@ -1,11 +1,18 @@
-import React, { Component } from "react";
+import React, { useState,useEffect } from "react";
 import Film from "../components/Film";
 
 export default function FilmPage(props){
-  console.log(props.match.params.id);
+ const[film,setFilm]=useState([]);
+
+ useEffect(()=>{
+  fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => response.json())
+  .then((films) =>setFilm(films[props.match.params.id-1]));
+ },[])
+console.log(film)
     return (
         <div>
-          <Film full />
+          <Film full getFilm={film} />
         </div>
       );
 }

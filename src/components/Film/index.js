@@ -3,58 +3,31 @@ import { Link } from "react-router-dom";
 import "./Film.css";
 
 export default function Film(props) {
+  // console.log(props.match.params.id);
   return (
-    
-    <div className={`film ${props.full ? 'film_full' : ''}`}>
+    <div className={`film ${props.full ? "film_full" : ""}`}>
       <div className="film__content">
         <img src="https://picsum.photos/100/100" alt="" className="film__img" />
         {/* <a href="#" className="film__film-more">
           &rsaquo;
         </a> */}
-        {!props.full && <Link to="/film-description" className="film__film-more">
-          &rsaquo;
-        </Link>}
+
+        {!props.full && (
+          <Link
+            to={`/film-description/${props.getFilms.id}`}
+            className="film__film-more"
+          >
+            &rsaquo;
+          </Link>
+        )}
 
         <div className="film__head-line">
-          <h2>Film name 1</h2>
+          <h2>{!props.full ? props.getFilms.title : props.getFilm.title}</h2>
           <span className="film__release">relis 2015</span>
         </div>
 
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio
-          mollitia quisquam iste possimus culpa sed esse sint nemo. Voluptate
-          quam dolorum laudantium quidem tenetur earum molestiae distinctio
-          obcaecati eligendi ea. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Libero accusantium itaque est eaque quod voluptates
-          consectetur nostrum culpa beatae expedita
-        </p>
+        <p>{!props.full ? props.getFilms.body : props.getFilm.body}</p>
       </div>
     </div>
   );
 }
-
-// export default function Film(props) {
-//   return (
-//     <div className="content">
-//       <div className="content__film">
-//         <img
-//           src="https://picsum.photos/100/100"
-//           alt=""
-//           className="content__img-film"
-//         />
-//         <a href="#" className="film__film-more">
-//           &rsaquo;
-//         </a>
-
-//         <div className="film__head-line">
-//           <h2>{props.title}</h2>
-//   <span className="film__release">{props.releaseYear}</span>
-//         </div>
-
-//         <p>
-//           {props.description}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
