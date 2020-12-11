@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from "react";
 import Film from "../components/Film";
+import Layout from './Layout';
 
 export default function FilmPage(props){
  const[film,setFilm]=useState([]);
@@ -11,9 +12,12 @@ export default function FilmPage(props){
  },[])
 console.log(film)
     return (
-        <div>
-          <Film full getFilm={film} />
-        </div>
+        // <div>
+        //   <Film full getFilm={film} />
+        // </div>
+        <Layout>
+          <Film full />
+        </Layout>
       );
 }
 
