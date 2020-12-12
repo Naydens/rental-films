@@ -14,7 +14,7 @@ export default function Film(props) {
 
         {!props.full && (
           <Link
-            to={`/film-description/${props.getFilms.id}`}
+            to={`/film-description/${props.filmObj.id}`}
             className="film__film-more"
           >
             &rsaquo;
@@ -22,11 +22,11 @@ export default function Film(props) {
         )}
 
         <div className="film__head-line">
-          <h2>{!props.full ? props.getFilms.title : props.getFilm.title}</h2>
+          <h2>{props.filmObj.title}</h2>
           <span className="film__release">relis 2015</span>
         </div>
 
-        <p>{!props.full ? props.getFilms.body : props.getFilm.body}</p>
+        <p>{props.filmObj.body}</p>
       </div>
     </div>
   );

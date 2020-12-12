@@ -6,14 +6,14 @@ export default function FilmPage(props) {
   const [film, setFilm] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch(`https://jsonplaceholder.typicode.com/posts/${props.match.params.id}`)
       .then((response) => response.json())
-      .then((films) => setFilm(films[props.match.params.id - 1]));
+      .then((film) => setFilm(film));
   }, []);
-  console.log(film);
+
   return (
     <Layout>
-      <Film full getFilm={film} />
+      <Film full filmObj={film} />
     </Layout>
   );
 }
