@@ -94,7 +94,7 @@ const ratingFilters = [
 export default function FiltersList() {
   return (
     <div className="filters">
-      <Filter header="By category" filtersList={categoryFilters} />
+      <Filter  header="By category" filtersList={categoryFilters} />
       <hr className="filters__line" />
       <Filter header="By language" filtersList={languageFilters} />
       <hr className="filters__line" />

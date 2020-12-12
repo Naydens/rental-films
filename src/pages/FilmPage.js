@@ -1,24 +1,21 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Film from "../components/Film";
-import Layout from './Layout';
+import Layout from "./Layout";
 
-export default function FilmPage(props){
- const[film,setFilm]=useState([]);
+export default function FilmPage(props) {
+  const [film, setFilm] = useState([]);
 
- useEffect(()=>{
-  fetch("https://jsonplaceholder.typicode.com/posts")
-  .then((response) => response.json())
-  .then((films) =>setFilm(films[props.match.params.id-1]));
- },[])
-console.log(film)
-    return (
-        // <div>
-        //   <Film full getFilm={film} />
-        // </div>
-        <Layout>
-          <Film full />
-        </Layout>
-      );
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((response) => response.json())
+      .then((films) => setFilm(films[props.match.params.id - 1]));
+  }, []);
+  console.log(film);
+  return (
+    <Layout>
+      <Film full getFilm={film} />
+    </Layout>
+  );
 }
 
 // import Comment from '../components/Comment';

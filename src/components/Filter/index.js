@@ -2,7 +2,7 @@ import "./Filter.css";
 
 export default function Filter(props) {
   const labelElems = props.filtersList.map((item) => (
-    <label >
+    <label key={item.value} >
       <input  type="checkbox" name="" value={item.value} />
       <span></span> {item.text}
     </label>
