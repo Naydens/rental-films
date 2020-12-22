@@ -26,7 +26,7 @@ export default function Film(props) {
           <span className="film__release">relis 2015</span>
         </div>
 
-        <p>{props.filmObj.body}</p>
+        <p>{props.filmObj.description}</p>
       </div>
     </div>
   );

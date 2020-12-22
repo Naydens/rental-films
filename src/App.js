@@ -11,7 +11,7 @@ export default function App() {
       <Route path="/" exact>
         <HomePage />
       </Route>
-
+{/* 
       <Route path="/film-description/:id" component={FilmPage} />
 
       <ProtectedRoute path="/playground">
@@ -20,7 +20,7 @@ export default function App() {
 
       <Route path="/login">
         <LoginPage />
-      </Route>
+      </Route> */}
     </BrowserRouter>
   );
 }
