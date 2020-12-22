@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Film.css";
 
 export default function Film(props) {
-  // console.log(props.match.params.id);
   return (
     <div className={`film ${props.full ? "film_full" : ""}`}>
       <div className="film__content">
