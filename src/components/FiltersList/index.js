@@ -1,4 +1,5 @@
 import Filter from "../Filter";
+import styles from "../Filter/Filter.module.css";
 
 const categoryFilters = [
   { text: "Action", value: 1 },
@@ -93,11 +94,11 @@ const ratingFilters = [
 
 export default function FiltersList() {
   return (
-    <div className="filters">
+    <div className={styles.filters}>
       <Filter  header="By category" filtersList={categoryFilters} />
-      <hr className="filters__line" />
+      <hr className={styles.filters__line} />
       <Filter header="By language" filtersList={languageFilters} />
-      <hr className="filters__line" />
+      <hr className={styles.filters__line} />
       <Filter header="By rating" filtersList={ratingFilters} />
     </div>
   );

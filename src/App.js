@@ -29,6 +29,7 @@ export default function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
+      
       </BrowserRouter>
     </UserContext.Provider>
   );

@@ -1,4 +1,4 @@
-import "./Filter.css";
+import styles from "../Filter/Filter.module.css";
 
 export default function Filter(props) {
   const labelElems = props.filtersList.map((item) => (
@@ -9,7 +9,7 @@ export default function Filter(props) {
   ));
 
   return (
-    <form  action="" className="filters__all-search">
+    <form  action="" className={styles.filters__allSearch}>
       <p>{props.header}</p>
       {labelElems}
     </form>
