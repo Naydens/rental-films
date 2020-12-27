@@ -9,9 +9,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 export const UserContext = React.createContext();
 
 export default function App() {
-  const user = {
-    name: 'Bob'
-  };
+  const user = null;
 
   return (
     <UserContext.Provider value={user}>
