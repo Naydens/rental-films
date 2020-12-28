@@ -5,14 +5,15 @@ import FilmPage from "./pages/FilmPage";
 import PlaygroundPage from "./pages/PlaygroundPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from './services/authService';
 
 export const UserContext = React.createContext();
 
 export default function App() {
-  const user = null;
+  const auth = useAuth();
 
   return (
-    <UserContext.Provider value={user}>
+    <UserContext.Provider value={auth}>
       <BrowserRouter>
         <Route path="/" exact>
           <HomePage />
