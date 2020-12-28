@@ -2,23 +2,20 @@ import { useEffect, useState } from "react";
 import ShowMoreBt from "../components/ShowMoreBt";
 import Film from "../components/Film";
 import Layout from "./Layout";
+import { getAllFilms } from '../services/filmsService';
 
 export default function HomePage(props) {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    fetch("https://0629d076-bde3-4b10-93ab-0b11e56f54f1.mock.pstmn.io/films")
-      .then((response) => response.json())
-      .then((posts) => setFilms(posts.slice(0, 5)));
+    getAllFilms().then((films) => setFilms(films.slice(0, 5)));
   }, []);
 
   function handleClick() {
-    return fetch("https://0629d076-bde3-4b10-93ab-0b11e56f54f1.mock.pstmn.io/films")
-      .then((response) => response.json())
-      .then((posts) => setFilms([...films, ...posts.slice(0, 5)]));
+    return getAllFilms().then((posts) => setFilms([...films, ...posts.slice(0, 5)]));
   }
 
-  const filmsList = films.map((film) => <Film filmObj={film} key={film.id} />);
+  const filmsList = films.map((film) => <Film filmObj={film} key={film.film_id} />);
 
   return (
     <Layout>
