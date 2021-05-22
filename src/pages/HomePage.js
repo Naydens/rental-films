@@ -8,14 +8,14 @@ export default function HomePage(props) {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    getAllFilms().then((films) => setFilms(films.slice(0, 5)));
+    getAllFilms().then((filmsData) => setFilms(filmsData.results));
   }, []);
 
   function handleClick() {
     return getAllFilms().then((posts) => setFilms([...films, ...posts.slice(0, 5)]));
   }
 
-  const filmsList = films.map((film) => <Film filmObj={film} key={film.film_id} />);
+  const filmsList = films.map((film) => <Film filmObj={film} key={film.id} />);
 
   return (
     <Layout>
