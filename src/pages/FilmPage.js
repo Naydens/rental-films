@@ -4,15 +4,14 @@ import Layout from "./Layout";
 
 export default function FilmPage(props) {
 
-
-  console.log(props);
   const [film, setFilm] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=<<api_key>>&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=50e28c2946dd6d45673965da6dadcf42&language=en-US`)
       .then((response) => response.json())
       .then((film) => setFilm(film));
   }, []);
+
 
   return (
     <Layout>
