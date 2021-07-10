@@ -1,24 +1,7 @@
+import React from "react";
+import { getAllGenres } from "../../services/filmsService";
 import Filter from "../Filter";
 import styles from "../Filter/Filter.module.css";
-
-const categoryFilters = [
-  { text: "Action", value: 1 },
-  { text: "Animation", value: 2 },
-  { text: "Children", value: 3 },
-  { text: "Classics", value: 4 },
-  { text: "Comedy", value: 5 },
-  { text: "Documentary", value: 6 },
-  { text: "Drama", value: 7 },
-  { text: "Family", value: 8 },
-  { text: "Foreign", value: 9 },
-  { text: "Games", value: 10 },
-  { text: "Horror", value: 11 },
-  { text: "Music", value: 12 },
-  { text: "New", value: 13 },
-  { text: "Sci-Fi", value: 14 },
-  { text: "Sports", value: 15 },
-  { text: "Travel", value: 16 },
-];
 
 const languageFilters = [
   { text: "English", value: 1 },
@@ -92,14 +75,27 @@ const ratingFilters = [
   },
 ];
 
-export default function FiltersList() {
-  return (
-    <div className={styles.filters}>
-      <Filter  header="By category" filtersList={categoryFilters} />
-      <hr className={styles.filters__line} />
-      <Filter header="By language" filtersList={languageFilters} />
-      <hr className={styles.filters__line} />
-      <Filter header="By rating" filtersList={ratingFilters} />
-    </div>
-  );
+export default class FiltersList extends React.Component {
+  state = {
+    genres: []
+  }
+
+  componentDidMount() {
+    getAllGenres()
+      .then(data => this.setState({
+        genres: data.genres
+      }));
+  }
+  
+  render() {
+    return (
+      <div className={styles.filters}>
+        <Filter header="By category" filtersList={this.state.genres} />
+        <hr className={styles.filters__line} />
+        <Filter header="By language" filtersList={languageFilters} />
+        <hr className={styles.filters__line} />
+        <Filter header="By rating" filtersList={ratingFilters} />
+      </div>
+    );
+  }
 }

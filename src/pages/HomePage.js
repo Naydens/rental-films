@@ -8,7 +8,7 @@ export default function HomePage(props) {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    getAllFilms().then((filmsData) => setFilms(filmsData.results));
+    getAllFilms([]).then((filmsData) => setFilms(filmsData.results));
   }, []);
 
   function handleClick() {
