@@ -12,8 +12,8 @@ export function getAllFilms(genres = []) {
   }
 }
 
-export function getFilm(id) {
-  return fetch("https://0629d076-bde3-4b10-93ab-0b11e56f54f1.mock.pstmn.io/films") // + id
+export function getFilmsPage(page) {
+  return fetch(`${API_SERVER}/discover/movie?page=${page}&api_key=${API_KEY}`)
     .then((response) => response.json());
 }
 
