@@ -83,7 +83,8 @@ export default class FiltersList extends React.Component {
   componentDidMount() {
     getAllGenres()
       .then(data => this.setState({
-        genres: data.genres
+        genres: data.genres,
+        key:data.id
       }));
   }
   
