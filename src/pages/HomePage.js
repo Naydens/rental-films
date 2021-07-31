@@ -24,10 +24,6 @@ export default function HomePage(props) {
     }
   }
 
-  function handleClickToUp() {
-    console.log("up");
-  }
-
   const filmsList = films.map((film) => <Film filmObj={film} key={film.id} />);
 
   return (
@@ -35,7 +31,7 @@ export default function HomePage(props) {
       {filmsList}
       <div className="layout__buttons-wrapper">
         <ShowMoreBt onClick={handleClickShoweMore} disabled={page > 499} />
-        <ButtonToUp onClick={handleClickToUp}/>
+        <ButtonToUp />
       </div>
     </Layout>
   );

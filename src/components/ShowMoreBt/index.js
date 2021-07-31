@@ -24,11 +24,6 @@ export default class ShowMoreBt extends Component {
       >
         {!isDisabled && <span>SHOW MORE</span>}
         {isDisabled && <div className="show-more__load" />}
-        
-        {/* <span className={this.state.isDisabled ? "hidden" : ""}>SHOW MORE</span>
-        <div
-          className={!this.state.isDisabled ? "hidden" : "show-more__load"}
-        ></div> */}
       </button>
     );
   }

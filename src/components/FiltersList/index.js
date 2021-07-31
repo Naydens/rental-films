@@ -83,7 +83,8 @@ export default class FiltersList extends React.Component {
   componentDidMount() {
     getAllGenres()
       .then(data => this.setState({
-        genres: data.genres
+        genres: data.genres,
+        key:data.id
       }));
   }
   
@@ -91,7 +92,7 @@ export default class FiltersList extends React.Component {
     return (
       <div className={styles.filters}>
         <Filter header="By category" filtersList={this.state.genres} />
-        <hr className={styles.filters__line} />
+        <hr className={styles.filters__line}  />
         <Filter header="By language" filtersList={languageFilters} />
         <hr className={styles.filters__line} />
         <Filter header="By rating" filtersList={ratingFilters} />
