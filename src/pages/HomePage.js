@@ -3,17 +3,16 @@ import ShowMoreBt from "../components/ShowMoreBt";
 import Film from "../components/Film";
 import Layout from "./Layout";
 import { getAllFilms, getFilmsPage } from "../services/filmsService";
-import ButtonToUp from "../components/ButtonToUp/ButtonToUp";
 import "./HomePage.css";
 
 export default function HomePage(props) {
   const [films, setFilms] = useState([]);
-
+  const [genres, setGenres] = useState([]);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    getAllFilms([]).then((filmsData) => setFilms(filmsData.results));
-  }, []);
+    getAllFilms(genres).then((filmsData) => setFilms(filmsData.results));
+  }, [genres]);
 
   function handleClickShoweMore() {
     if (page <= 499) {
@@ -24,18 +23,21 @@ export default function HomePage(props) {
     }
   }
 
-  function handleClickToUp() {
-    console.log("up");
-  }
-
   const filmsList = films.map((film) => <Film filmObj={film} key={film.id} />);
 
+  const onGenreFilterChange = (id, isActive) => {
+    if (isActive) {
+      setGenres(genres.concat(id));
+    } else {
+      // remove id from array
+    }
+  }
+
   return (
-    <Layout className="layout">
+    <Layout className="layout" onGenreFilterChange={onGenreFilterChange}>
       {filmsList}
       <div className="layout__buttons-wrapper">
         <ShowMoreBt onClick={handleClickShoweMore} disabled={page > 499} />
-        <ButtonToUp onClick={handleClickToUp}/>
       </div>
     </Layout>
   );

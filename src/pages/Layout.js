@@ -11,7 +11,9 @@ const Layout = (props) => {
             </div>
 
             <div className="container__right">
-                <FiltersList />
+                <FiltersList
+                    onGenreFilterChange={props.onGenreFilterChange}
+                />
             </div>
         </div>
     )

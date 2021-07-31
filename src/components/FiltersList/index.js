@@ -90,7 +90,11 @@ export default class FiltersList extends React.Component {
   render() {
     return (
       <div className={styles.filters}>
-        <Filter header="By category" filtersList={this.state.genres} />
+        <Filter
+          header="By category"
+          filtersList={this.state.genres}
+          onGenreFilterChange={this.props.onGenreFilterChange}
+        />
         <hr className={styles.filters__line} />
         <Filter header="By language" filtersList={languageFilters} />
         <hr className={styles.filters__line} />

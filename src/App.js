@@ -6,6 +6,7 @@ import PlaygroundPage from "./pages/PlaygroundPage";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from './services/authService';
+import ButtonToUp from './components/ButtonToUp';
 
 export const UserContext = React.createContext();
 
@@ -30,6 +31,7 @@ export default function App() {
         </Route>
       
       </BrowserRouter>
+      <ButtonToUp breakpoint={500} />
     </UserContext.Provider>
   );
 }
