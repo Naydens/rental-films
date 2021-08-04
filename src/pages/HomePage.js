@@ -29,9 +29,12 @@ export default function HomePage(props) {
     if (isActive) {
       setGenres(genres.concat(id));
     } else {
-      // remove id from array
+      let index = genres.indexOf(id);
+      let genresCopy = genres.slice();
+      genresCopy.splice(index,1);
+      setGenres(genresCopy);
     }
-  }
+  };
 
   return (
     <Layout className="layout" onGenreFilterChange={onGenreFilterChange}>
