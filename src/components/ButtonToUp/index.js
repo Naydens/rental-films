@@ -20,6 +20,6 @@ export default function ButtonToUp(props) {
     }, []);
 
     return(
-        (hidden) ? null : <button className="button-to-up" onClick={onClick}>UP</button>
+        (hidden) ? null : <button className="button-to-up button-to-up_animation" onClick={onClick}>UP</button>
     );
 }
